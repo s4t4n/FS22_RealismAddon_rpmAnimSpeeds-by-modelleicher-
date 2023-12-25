@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="62">
+  <author>modelleicher</author>
+  <contributor>SbSh</contributor>
+  <version>0.1.0.5 BETA</version>
+  <title>
+    <en>Realism Addon: RPM Anim Speeds</en>
+  </title>
+  <description>
+    <en><![CDATA[
+This Mod adjusts animation speeds of several implements according to RPM of the tractor
+    ]]></en>
+    <de><![CDATA[
+Dieser Mod passt die Animations-Geschwindigkeit diverser Fahrzeuge an die Drehzahl des Traktors an.
+    ]]></de>
+  </description>
+  <iconFilename>icon.dds</iconFilename>
+  
+  <multiplayer supported="true"/>
+  <extraSourceFiles>
+		<sourceFile filename="register.lua" />
+  </extraSourceFiles>
+  
+  
+</modDesc>
