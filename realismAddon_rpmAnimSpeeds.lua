@@ -350,7 +350,10 @@ function realismAddon_rpmAnimSpeeds:onUpdate(dt)
 
 
 		-- foldable
-		if self.spec_foldable ~= nil and not self.spec_windrower then -- SbSh - took out windrower, because saddled Windrower doesn't get lowered, it swap the move direction or something
+		local storeItem = g_storeManager:getItemByXMLFilename(self.configFileName)
+		local StI = storeItem.categoryName
+		-- print("Cat: " .. StI)
+		if self.spec_foldable ~= nil and not self.spec_windrower and StI ~= "MOWERVEHICLES" then -- SbSh - took out windrower, because saddled Windrower doesn't get lowered, it swap the move direction or something
 			local spec = self.spec_foldable;
 			for _, foldingPart in pairs(spec.foldingParts) do
 				foldingPart.speedScale = foldingPart.speedScaleBackup * rpmValue;
@@ -359,7 +362,7 @@ function realismAddon_rpmAnimSpeeds:onUpdate(dt)
 				end;
 			end;
 		end;
-		
+
 		-- attacher Joints moveTime 
 		if self.spec_attacherJoints ~= nil then
 			local spec = self.spec_attacherJoints;
