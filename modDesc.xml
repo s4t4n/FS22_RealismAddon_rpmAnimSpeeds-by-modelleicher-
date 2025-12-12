@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="75">
+<modDesc descVersion="105">
   <author>modelleicher</author>
   <contributor>SbSh</contributor>
-  <version>0.1.0.6 BETA</version>
+  <version>0.2.0.0 BETA</version>
   <title>
     <en>Realism Addon: RPM Anim Speeds</en>
   </title>
@@ -14,7 +14,7 @@ This Mod adjusts animation speeds of several implements according to RPM of the 
 Dieser Mod passt die Animations-Geschwindigkeit diverser Fahrzeuge an die Drehzahl des Traktors an.
     ]]></de>
   </description>
-  <iconFilename>icon.dds</iconFilename>
+  <iconFilename>icon_RealismAddon_rpmAnimSpeeds.dds</iconFilename>
   
   <multiplayer supported="true"/>
   <extraSourceFiles>

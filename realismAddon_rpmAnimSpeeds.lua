@@ -2,6 +2,7 @@
 -- 2021
 -- BETA Release 10/2021 due to FS22 being close, script is nowhere near done yet 
 -- update: 16.01.2023
+-- convert to fs25 12.12.2025 SbSh
 
 realismAddon_rpmAnimSpeeds = {};
 
@@ -300,7 +301,7 @@ function realismAddon_rpmAnimSpeeds:onUpdate(dt)
 			local rpm = motor:getLastMotorRpm() -- work with CVTa and rAGB
 			local maxRpm = motor:getMaxRpm() -- work with CVTa and rAGB
 			spdValue = math.min(( self:getLastSpeed() / 20 ), 1)
-			rpmValue = rpm / maxRpm;	
+			rpmValue = math.max((rpm / maxRpm), 0.01)	
 		end;	
 		
 		-- turnOnVehicle Animations
@@ -370,10 +371,15 @@ function realismAddon_rpmAnimSpeeds:onUpdate(dt)
 			-- go through all attached implements, have to do it this way for easy access to implement.object for getIsLowered, since lowered state is not stored anywhere else
 			for _, implement in pairs(spec.attachedImplements) do
 				local jointDesc = spec.attacherJoints[implement.jointDescIndex]
+				-- print(tostring("rpmValue: " .. rpmValue))
 				if implement.object:getIsLowered() == false then
-					jointDesc.moveTime = math.max(jointDesc.moveTimeBackup / rpmValue, 0.4);
+					if jointDesc.moveTime ~= nil and jointDesc.moveTimeBackup ~= nil and rpmValue ~= 0 then
+						jointDesc.moveTime = math.max( math.max(jointDesc.moveTimeBackup / rpmValue, 0.4), 0.01);  -- 2nd mathmax cuz "Divide by zero error."
+					end
 				else
-					jointDesc.moveTime = jointDesc.moveTimeBackup / rpmValue * 1.2; -- make lowering a bit faster than default since default lowering is quite slow, and even raising at full throttle might be slower than "falling"
+					if jointDesc.moveTime ~= nil and jointDesc.moveTimeBackup ~= nil then
+						jointDesc.moveTime = jointDesc.moveTimeBackup / rpmValue * 1.2; -- make lowering a bit faster than default since default lowering is quite slow, and even raising at full throttle might be slower than "falling"
+					end
 				end;
 			end;	
 		end;

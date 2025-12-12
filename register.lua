@@ -20,6 +20,7 @@ end
 
 local function init()
     TypeManager.validateTypes = Utils.prependedFunction(TypeManager.validateTypes, initSpecialization)
+    print("init TypeManager")
 end
 
 init()
