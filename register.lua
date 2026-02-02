@@ -12,7 +12,9 @@ local function initSpecialization(manager)
         g_specializationManager:addSpecialization("realismAddon_rpmAnimSpeeds", "realismAddon_rpmAnimSpeeds", modDirectory .. "realismAddon_rpmAnimSpeeds.lua", nil)
 
         for typeName, typeEntry in pairs(g_vehicleTypeManager:getTypes()) do
+            if typeName ~= "selfPropelledMower" then
                 g_vehicleTypeManager:addSpecialization(typeName, modName .. ".realismAddon_rpmAnimSpeeds")
+            end
 		end
 	end
 end
