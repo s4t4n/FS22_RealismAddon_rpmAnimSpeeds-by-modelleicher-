@@ -11,7 +11,7 @@ Ansonsten passen sich die Kreisel etc. der Motor- / Pto-Drehzahl an.
 Nun hab ich von Sam (Modelleicher) die Freigabe erhalten, euch das Script hier zur Verfügung zu stellen.
 Das Urheberrecht bleibt bei modelleicher! Sprich wenn er wieder Zeit findet dort weiter zu machen, werde ich diesen release hier wieder raus nehmen.
 
-Am besten funktiert es in Kombination mit realismAddon_Gearbox bei Hand gerissenen und mit CVT-Addon bei Stufenlosen.
+Am besten funktioniert es in Kombination mit realismAddon_Gearbox bei Hand gerissenen und mit CVT-Addon bei Stufenlosen.
 
 https://github.com/modelleicher/FS25_realismAddon_gearbox
 
